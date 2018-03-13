@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script>
+    function myFunction() {
+       document.getElementById("demo").innerHTML = "Parágrafo alterado";
+       $("#demo").text("Parágrafo alterado com jQuery!");
+    }
+
+    $(function () {
+
+    });
+    </script>
+  </head>
+
+  <body>
+
+    <h1>Minha página web</h1>
+
+    <p id="demo">Um parágrafo</p>
+
+    <button type="button" onclick="myFunction()">Testar</button>
+
+  </body>
+</html>

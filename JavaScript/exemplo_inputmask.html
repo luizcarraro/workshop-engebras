@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="js/jquery.inputmask.bundle.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $("#placa").inputmask({
+          mask:"AAA-9999",
+          removeMaskOnSubmit: true
+        });
+
+        $('#placa').keyup(function verificaMascara() {
+          if($(this).inputmask("isComplete")) {
+            console.log('Placa completa');
+            $('label').css('color','green');
+          } else {
+            console.log('incompleta');
+            $('label').css('color','red');
+          }
+        });
+
+        $("#telefone").inputmask({
+          mask: ["(99) 9999-9999", "(99) 99999-9999"],
+          removeMaskOnSubmit: true
+        });
+        $('#cpf').inputmask({
+          mask: '999.999.999-99',
+          autoUnmask: true
+        });
+        $('#cep').inputmask({
+          mask: '99999-999',
+          autoUnmask: true
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form class="" action="http://teste.php" method="get">
+      <h1>Teste de mascaras.</h1>
+      <label for="">Placa:</label>
+      <input id="placa" type="text" name="placa">
+      <br>
+      <label for="telefone">Telefone</label>
+      <input id="telefone" type="text" name="telefone">
+      <br>
+      <label for="">CEP</label>
+      <input id="cep" type="text" name="cep">
+      <br>
+      <label for="">CPF</label>
+      <input id="cpf" type="text" name="cpf">
+      <input type="submit" name="" value="Enviar">
+    </form>
+  </body>
+</html>
